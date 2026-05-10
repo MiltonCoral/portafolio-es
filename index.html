@@ -1,0 +1,943 @@
+<!DOCTYPE HTML>
+<html lang="es">
+	<head>
+		<title>Milton Coral</title>
+		<meta charset="utf-8" />
+
+		<!-- Primary SEO -->
+		<meta name="description" content="Milton Coral — Ingeniero de IA y Desarrollador Full Stack. Expert Coder en Outlier AI. Especializado en evaluación de LLMs, ingeniería de prompts, Python, Java y soluciones en la nube. Multilingüe: inglés, español, japonés." />
+		<meta name="keywords" content="Milton Coral, Ingeniero de IA, Expert Coder, Outlier AI, Evaluación LLM, Ingeniería de Prompts, Aprendizaje Automático, Desarrollador Full Stack, Python, JavaScript, Java, AWS, Portafolio" />
+		<meta name="author" content="Milton Coral" />
+		<meta name="robots" content="index, follow" />
+		<link rel="canonical" href="https://miltoncoral.github.io/portafolio/" />
+
+		<!-- Open Graph -->
+		<meta property="og:title" content="Milton Coral | Ingeniero de IA y Desarrollador Full Stack" />
+		<meta property="og:description" content="Expert Coder en Outlier AI. Optimización de LLMs, ingeniería de prompts, Python, Java, AWS. Multilingüe: inglés, español, japonés." />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://miltoncoral.github.io/portafolio/" />
+		<meta property="og:image" content="https://miltoncoral.github.io/portafolio/images/carnet.jpeg" />
+		<meta property="og:locale" content="es_EC" />
+
+		<!-- Schema.org -->
+		<script type="application/ld+json">
+		{
+		  "@context": "https://schema.org",
+		  "@type": "Person",
+		  "name": "Milton Coral",
+		  "jobTitle": "Ingeniero de IA",
+		  "description": "Ingeniero de IA multilingüe especializado en optimización de LLMs, ingeniería de prompts y desarrollo de aplicaciones escalables. Expert Coder en Outlier AI.",
+		  "url": "https://miltoncoral.github.io/portafolio/",
+		  "email": "coral.milton@gmail.com",
+		  "image": "https://miltoncoral.github.io/portafolio/images/carnet.jpeg",
+		  "sameAs": [
+		    "https://www.linkedin.com/in/m1lt0n/",
+		    "https://gitlab.com/coral.milton",
+		    "https://github.com/miltoncoral"
+		  ],
+		  "worksFor": {
+		    "@type": "Organization",
+		    "name": "Outlier AI"
+		  },
+		  "alumniOf": {
+		    "@type": "CollegeOrUniversity",
+		    "name": "Universidad Politécnica Salesiana"
+		  },
+		  "address": {
+		    "@type": "PostalAddress",
+		    "addressLocality": "Quito",
+		    "addressCountry": "EC"
+		  }
+		}
+		</script>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+
+		<style>
+			#myVideo {
+				position: fixed;
+				right: 0;
+				bottom: 0;
+				min-width: 100%;
+				min-height: 100%;
+				z-index: -2;
+				object-fit: cover;
+			}
+
+			body::before {
+				content: '';
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: rgba(0, 0, 0, 0.5);
+				z-index: -1;
+			}
+
+			#wrapper {
+				position: relative;
+				z-index: 1;
+			}
+
+			.project-selector {
+				text-align: center;
+				margin-bottom: 2em;
+				display: flex;
+				justify-content: center;
+				gap: 1em;
+			}
+
+			.selector-btn {
+				padding: 0.75em 2.5em;
+				background: rgba(0, 0, 0, 0.6);
+				color: white;
+				cursor: pointer;
+				font-size: 1.1em;
+				font-weight: 600;
+				transition: all 0.4s ease;
+				border-radius: 4px;
+				border: 2px solid transparent;
+				backdrop-filter: blur(10px);
+				box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+			}
+
+			.selector-btn.active {
+				background: rgba(0, 0, 0, 0.6);
+				color: white;
+				border-color: transparent;
+				box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+			}
+
+			.selector-btn:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 4px 8px rgba(245, 106, 106, 0.3);
+				background: rgba(245, 106, 106, 0.4);
+			}
+
+			.posts article[data-category="code"] { display: none; }
+			.posts article[data-category="data"] { display: none; }
+
+			@media (max-width: 767px) {
+				#carnet { display: none; }
+			}
+		</style>
+
+		<style>
+			* { margin: 0; padding: 0; box-sizing: border-box; }
+
+			.carousel-section { max-width: 1000px; margin: 0 auto; }
+
+			.carousel-header { text-align: center; margin-bottom: 3rem; }
+			.carousel-header h2 { color: white; font-size: 2.5rem; margin-bottom: 0.5rem; word-wrap: break-word; }
+			.carousel-header p { color: rgba(255,255,255,0.7); font-size: 1.1rem; }
+
+			.carousel-container { position: relative; overflow: hidden; padding: 20px 0; }
+			.carousel-track { display: flex; transition: transform 0.5s ease-in-out; gap: 0; }
+
+			.experience-card {
+				min-width: 100%; max-width: 100%;
+				background: rgba(255,255,255,0.1);
+				backdrop-filter: blur(10px);
+				border-radius: 20px; padding: 3rem;
+				border: 1px solid rgba(255,255,255,0.2);
+				box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+				display: flex; gap: 2rem; align-items: flex-start;
+				flex-wrap: wrap; overflow: hidden; word-wrap: break-word; box-sizing: border-box;
+			}
+
+			.experience-logo {
+				flex-shrink: 0; width: 120px; height: 120px;
+				background: white; border-radius: 15px;
+				display: flex; align-items: center; justify-content: center;
+				font-size: 3rem; box-shadow: 0 4px 12px rgba(0,0,0,0.2); object-fit: contain;
+			}
+
+			.experience-content { flex: 1; min-width: 0; overflow: hidden; }
+			.experience-title { color: white; font-size: 1.8rem; margin: 0 0 0.5rem 0; font-weight: 600; word-wrap: break-word; }
+			.experience-company { color: rgba(245,106,106,0.9); font-size: 1.3rem; margin: 0 0 0.5rem 0; font-weight: 500; word-wrap: break-word; }
+			.experience-date { color: rgba(255,255,255,0.6); font-size: 1rem; margin: 0 0 1.5rem 0; }
+			.experience-description { color: rgba(255,255,255,0.9); line-height: 1.8; margin-bottom: 1.5rem; word-wrap: break-word; }
+
+			.experience-skills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+			.skill-tag {
+				background: rgba(245,106,106,0.3); color: white;
+				padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.9rem;
+				border: 1px solid rgba(245,106,106,0.5); white-space: nowrap;
+			}
+
+			.carousel-controls { display: flex; justify-content: center; align-items: center; gap: 2rem; margin-top: 2rem; }
+			.carousel-btn {
+				background: rgba(245,106,106,0.6); color: white;
+				border: 2px solid rgba(245,106,106,0.8);
+				width: 50px; height: 50px; font-size: 1.5rem;
+				cursor: pointer; transition: all 0.3s ease; backdrop-filter: blur(10px);
+				display: flex; align-items: center; justify-content: center; border-radius: 50%;
+			}
+			.carousel-btn:hover:not(:disabled) { background: rgba(245,106,106,0.8); transform: scale(1.1); }
+			.carousel-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+
+			.carousel-dots { display: flex; gap: 0.8rem; }
+			.dot {
+				width: 12px; height: 12px; border-radius: 50%;
+				background: rgba(255,255,255,0.3); cursor: pointer;
+				transition: all 0.3s ease; border: none; padding: 0;
+			}
+			.dot.active { background: rgba(245,106,106,0.9); width: 30px; border-radius: 6px; }
+
+			@media (max-width: 768px) {
+				.experience-card { padding: 1.5rem; flex-direction: column; align-items: center; text-align: center; }
+				.experience-logo { width: 100px; height: 100px; font-size: 2.5rem; }
+				.experience-title { font-size: 1.4rem; }
+				.experience-company { font-size: 1.1rem; }
+				.experience-skills { justify-content: center; }
+				.carousel-btn { width: 40px; height: 40px; font-size: 1.2rem; }
+				.carousel-controls { gap: 1rem; }
+			}
+		</style>
+
+		<style>
+			.skills-certifications-section { max-width: 1200px; margin: 4rem auto; }
+
+			.two-column-layout {
+				display: grid; grid-template-columns: 1fr 1fr;
+				gap: 4rem; margin-top: 2rem;
+			}
+
+			.column-header {
+				margin-bottom: 2.5rem; padding-bottom: 1rem;
+				border-bottom: 2px solid rgba(245,106,106,0.3);
+			}
+			.column-header h2 { color: white; font-size: 2rem; margin: 0 0 0.5rem 0; font-weight: 600; }
+			.column-header p { color: rgba(255,255,255,0.6); font-size: 0.95rem; margin: 0; }
+
+			.languages-list { display: flex; flex-direction: column; gap: 2rem; }
+			.language-item { display: flex; align-items: flex-start; gap: 1.5rem; padding: 1rem 0; transition: all 0.3s ease; }
+			.language-item:hover { padding-left: 0.5rem; }
+			.language-content { flex: 1; }
+			.language-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem; }
+			.language-name { color: white; font-size: 1.4rem; margin: 0; font-weight: 600; }
+			.language-level { color: rgba(245,106,106,0.9); font-size: 1rem; font-weight: 500; }
+			.proficiency-bar { width: 100%; height: 4px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; margin-top: 0.5rem; }
+			.proficiency-fill { height: 100%; background: linear-gradient(90deg, rgba(245,106,106,0.8), rgba(245,106,106,0.4)); border-radius: 10px; transition: width 1s ease; }
+
+			.certifications-list { display: flex; flex-direction: column; gap: 2rem; }
+			.certification-item { display: flex; align-items: flex-start; gap: 1.5rem; padding: 1rem 0; transition: all 0.3s ease; }
+			.certification-item:hover { padding-left: 0.5rem; }
+			.cert-icon { font-size: 2rem; flex-shrink: 0; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; background: rgba(245,106,106,0.15); border-radius: 8px; }
+			.cert-content { flex: 1; }
+			.cert-name { color: white; font-size: 1.2rem; margin: 0 0 0.3rem 0; font-weight: 600; }
+			.cert-issuer { color: rgba(245,106,106,0.9); font-size: 0.95rem; margin: 0 0 0.5rem 0; font-weight: 500; }
+			.cert-badge { display: inline-block; color: rgba(255,255,255,0.7); font-size: 0.85rem; padding: 0.25rem 0; }
+
+			@media (max-width: 768px) {
+				.two-column-layout { grid-template-columns: 1fr; gap: 3rem; }
+				.column-header h2 { font-size: 1.8rem; }
+			}
+		</style>
+
+		<style>
+			.container { max-width: 1400px; margin: 0 auto; }
+			header { margin-bottom: 4rem; }
+			h1 { color: #fff; font-size: 3.5rem; margin-bottom: 2.5rem; font-weight: 700; letter-spacing: -0.02em; }
+
+			.projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 4rem 3rem; }
+
+			article { display: none; opacity: 1; }
+			article.visible { display: block; }
+
+			.image { width: 100%; height: 300px; overflow: hidden; display: block; margin-bottom: 1.5rem; }
+			.image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; filter: brightness(0.9); }
+			article:hover .image img { transform: scale(1.03); filter: brightness(1); }
+
+			.content { padding: 0; }
+			h3 { color: #fff; font-size: 1.6rem; margin-bottom: 1rem; font-weight: 600; line-height: 1.3; }
+			p { color: #aaa; line-height: 1.8; margin-bottom: 1rem; font-size: 0.95rem; }
+			.actions { list-style: none; margin-top: 1.5rem; }
+
+			@media (max-width: 1024px) {
+				.projects-grid { grid-template-columns: 1fr; gap: 3rem; }
+				h1 { font-size: 2.5rem; }
+			}
+
+			@media (max-width: 768px) {
+				h1 { font-size: 2rem; }
+				.image { height: 250px; }
+			}
+		</style>
+	</head>
+
+	<body class="is-preload">
+
+		<!-- Fondo de video -->
+		<video autoplay muted loop playsinline id="myVideo">
+			<source src="images/output_bw.mp4" type="video/mp4">
+		</video>
+
+		<div id="wrapper">
+			<div id="main">
+				<div class="inner">
+
+					<header id="header">
+						<a href="index.html" class="logo"><strong>Portafolio</strong></a>
+					</header>
+
+					<!-- PRESENTACIÓN -->
+					<section id="banner">
+						<div>
+							<article style="
+								display: flex;
+								background: transparent !important;
+								align-items: center;
+								gap: 2rem;
+								flex-wrap: wrap;
+								border-radius: 0px !important;
+							">
+								<div style="flex: 1; min-width: 280px;">
+									<header>
+										<h1 style="color: white; font-size: clamp(1.5rem, 5vw, 2.5rem); margin: 0 0 1rem 0;">Milton Coral</h1>
+									</header>
+									<p style="
+										color: rgba(255,255,255,0.9);
+										text-align: justify;
+										font-size: clamp(0.875rem, 2vw, 1rem);
+										line-height: 2;
+										margin: 0;
+										word-wrap: break-word;
+										overflow-wrap: break-word;
+									">
+										Ingeniero de IA multilingüe (inglés/español/japonés) especializado en optimización de LLMs, ingeniería de prompts y desarrollo de aplicaciones escalables. Con experiencia en evaluación de modelos de IA, análisis de datos y soluciones en la nube usando Java, PHP, C#, JavaScript y Python.
+									</p>
+								</div>
+								<div style="flex-shrink: 0;">
+									<img id="carnet" src="images/carnet.jpeg" alt="Milton Coral"
+										style="
+											width: clamp(200px, 30vw, 240px);
+											border-radius: 10px;
+											box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+										"
+									/>
+								</div>
+							</article>
+						</div>
+					</section>
+
+					<!-- EXPERIENCIA LABORAL -->
+					<section class="exp">
+						<div class="carousel-section">
+							<div class="carousel-header">
+								<h2>Experiencia Laboral</h2>
+								<p>Mi trayectoria profesional en ingeniería de software, desarrollo full-stack y sistemas inteligentes</p>
+							</div>
+
+							<div class="carousel-container">
+								<div class="carousel-track" id="carouselTrack">
+
+									<!-- Experiencia 1: Outlier AI -->
+									<div class="experience-card">
+										<img class="experience-logo" src="images/outlierlogo.png" alt="Logo Outlier AI"/>
+										<div class="experience-content">
+											<h3 class="experience-title">Expert Coder</h3>
+											<div class="experience-company">Outlier AI</div>
+											<p class="experience-description">
+												Contribuí a proyectos avanzados de ingeniería de software y evaluación de modelos de IA mediante la construcción, revisión, prueba y validación de soluciones de código en múltiples lenguajes de programación. Diseñé aplicaciones full-stack, servicios backend, APIs REST, suites de pruebas automatizadas y entornos Docker reproducibles usando C#, Java, PHP, JavaScript, TypeScript y Python. Enfocado en calidad de código, corrección funcional, ingeniería de prompts y entrega de software listo para producción.
+											</p>
+											<div class="experience-skills">
+												<span class="skill-tag">C# / .NET</span>
+												<span class="skill-tag">Java</span>
+												<span class="skill-tag">PHP</span>
+												<span class="skill-tag">JavaScript</span>
+												<span class="skill-tag">TypeScript</span>
+												<span class="skill-tag">Python</span>
+												<span class="skill-tag">APIs REST</span>
+												<span class="skill-tag">Docker</span>
+												<span class="skill-tag">Pruebas Automatizadas</span>
+												<span class="skill-tag">Revisión de Código</span>
+												<span class="skill-tag">Evaluación de LLMs</span>
+												<span class="skill-tag">Ingeniería de Prompts</span>
+											</div>
+										</div>
+									</div>
+
+									<!-- Experiencia 2: Idrix Technology -->
+									<div class="experience-card">
+										<img class="experience-logo" src="images/idrix.png" alt="Logo Idrix Technology"/>
+										<div class="experience-content">
+											<h3 class="experience-title">Ingeniero de IA/ML y Desarrollador Full-Stack</h3>
+											<div class="experience-company">Idrix Technology</div>
+											<p class="experience-description">
+												Diseñé y desarrollé módulos full-stack, servicios backend, APIs y funciones inteligentes para plataformas ERP y de gestión empresarial. Trabajé con PHP, Java, Python, JavaScript, Node.js, Spring Boot, Laravel, bases de datos SQL y Docker para construir sistemas escalables, mantenibles y orientados a datos. Implementé modelos de aprendizaje automático, analítica financiera, reportes automatizados, integraciones de chatbots y servicios en la nube para operaciones empresariales reales.
+											</p>
+											<div class="experience-skills">
+												<span class="skill-tag">PHP</span>
+												<span class="skill-tag">Laravel</span>
+												<span class="skill-tag">Java</span>
+												<span class="skill-tag">Spring Boot</span>
+												<span class="skill-tag">JavaScript</span>
+												<span class="skill-tag">Node.js</span>
+												<span class="skill-tag">TypeScript</span>
+												<span class="skill-tag">Python</span>
+												<span class="skill-tag">SQL</span>
+												<span class="skill-tag">MySQL</span>
+												<span class="skill-tag">APIs REST</span>
+												<span class="skill-tag">Docker</span>
+												<span class="skill-tag">AWS</span>
+												<span class="skill-tag">Aprendizaje Automático</span>
+											</div>
+										</div>
+									</div>
+
+									<!-- Experiencia 3: Universidad / Proyectos independientes -->
+									<div class="experience-card">
+										<div class="experience-logo">🚀</div>
+										<div class="experience-content">
+											<h3 class="experience-title">Desarrollador de Software y Asesor Técnico</h3>
+											<div class="experience-company">Proyectos Universitarios e Independientes</div>
+											<p class="experience-description">
+												Desarrollé y asesoré proyectos de software enfocados en aplicaciones web, dashboards IoT, pipelines de procesamiento de datos, sistemas NLP y plataformas en la nube. Construí APIs backend, servicios de autenticación, flujos de análisis de datos y soluciones de monitoreo en tiempo real usando Python, JavaScript, Node.js, SQL, AWS y Raspberry Pi. Apoyé la implementación técnica, arquitectura del sistema, pruebas y despliegue de proyectos académicos e independientes.
+											</p>
+											<div class="experience-skills">
+												<span class="skill-tag">Python</span>
+												<span class="skill-tag">JavaScript</span>
+												<span class="skill-tag">Node.js</span>
+												<span class="skill-tag">Express.js</span>
+												<span class="skill-tag">SQL</span>
+												<span class="skill-tag">AWS</span>
+												<span class="skill-tag">APIs REST</span>
+												<span class="skill-tag">IoT</span>
+												<span class="skill-tag">Raspberry Pi</span>
+												<span class="skill-tag">Análisis de Datos</span>
+												<span class="skill-tag">NLP</span>
+												<span class="skill-tag">Despliegue en la Nube</span>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+
+							<div class="carousel-controls">
+								<button class="carousel-btn" id="prevBtn" onclick="moveCarousel(-1)">‹</button>
+								<div class="carousel-dots" id="dotsContainer"></div>
+								<button class="carousel-btn" id="nextBtn" onclick="moveCarousel(1)">›</button>
+							</div>
+						</div>
+					</section>
+
+					<!-- IDIOMAS Y CERTIFICACIONES -->
+					<section class="skills-certifications-section">
+						<div class="two-column-layout">
+
+							<!-- COLUMNA IZQUIERDA: IDIOMAS -->
+							<div>
+								<div class="column-header">
+									<h2>Idiomas</h2>
+									<p>Comunicación profesional multilingüe</p>
+								</div>
+								<div class="languages-list">
+									<div class="language-item">
+										<div class="language-content">
+											<div class="language-header">
+												<h3 class="language-name">Español</h3>
+												<span class="language-level">Nativo</span>
+											</div>
+											<div class="proficiency-bar">
+												<div class="proficiency-fill" style="width: 100%;"></div>
+											</div>
+										</div>
+									</div>
+									<div class="language-item">
+										<div class="language-content">
+											<div class="language-header">
+												<h3 class="language-name">Inglés</h3>
+												<span class="language-level">Profesional de Negocios</span>
+											</div>
+											<div class="proficiency-bar">
+												<div class="proficiency-fill" style="width: 90%;"></div>
+											</div>
+										</div>
+									</div>
+									<div class="language-item">
+										<div class="language-content">
+											<div class="language-header">
+												<h3 class="language-name">Japonés</h3>
+												<span class="language-level">Intermedio</span>
+											</div>
+											<div class="proficiency-bar">
+												<div class="proficiency-fill" style="width: 60%;"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- COLUMNA DERECHA: CERTIFICACIONES -->
+							<div>
+								<div class="column-header">
+									<h2>Certificaciones</h2>
+									<p>Credenciales y calificaciones profesionales</p>
+								</div>
+								<div class="certifications-list">
+									<div class="certification-item">
+										<div class="cert-content">
+											<h3 class="cert-name">Certificado de Inglés de Negocios</h3>
+											<p class="cert-issuer">Certificado TOEFL/IELTS</p>
+											<span class="cert-badge">Dominio del Idioma</span>
+										</div>
+									</div>
+									<div class="certification-item">
+										<div class="cert-content">
+											<h3 class="cert-name">Ciencias de la Computación</h3>
+											<p class="cert-issuer">Título de Ingeniería</p>
+											<span class="cert-badge">Título Académico</span>
+										</div>
+									</div>
+									<div class="certification-item">
+										<div class="cert-content">
+											<h3 class="cert-name">Especializaciones en Nube e IA</h3>
+											<p class="cert-issuer">Google Data Analytics, Especialización AWS Cloud Solutions Architect, Certificado Profesional de Soporte Técnico IBM</p>
+											<span class="cert-badge">Experiencia Técnica</span>
+										</div>
+									</div>
+									<div class="certification-item">
+										<div class="cert-content">
+											<h3 class="cert-name">Experto en QA – IA Generativa</h3>
+											<p class="cert-issuer">Emitido por Outlier · Feb 2026</p>
+											<span class="cert-badge">
+												Reconocido por mantener altos estándares de calidad, precisión y consistencia en flujos de evaluación y anotación de modelos de IA.
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<!-- PROYECTOS -->
+					<section>
+						<div class="container">
+							<header>
+								<div class="project-selector"
+									style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; width: 100%; padding: 1rem;">
+									<button class="selector-btn active" data-category="ai">Proyectos de IA</button>
+									<button class="selector-btn" data-category="data">Proyectos de Datos</button>
+									<button class="selector-btn" data-category="code">Proyectos de Código</button>
+								</div>
+							</header>
+
+							<div class="projects-grid">
+
+								<!-- Proyectos de IA -->
+								<article data-category="ai" class="visible">
+									<a class="image"><img src="images/CExample1.png" alt="Outlier AI Real Coder Project" /></a>
+									<div class="content">
+										<h3>Outlier AI – Proyecto Real Coder</h3>
+										<p>Proyecto de evaluación de código de IA enfocado en enseñar a agentes de software a resolver tareas de desarrollo reales. Diseñé prompts técnicos claros, construí implementaciones de referencia completas y creé flujos de validación usando pruebas automatizadas, entornos Docker y rúbricas de expertos. El proyecto abarcó aplicaciones full-stack, APIs, simulaciones, dashboards y soluciones de código listas para producción.</p>
+										<p>Tecnologías: Python, PHP, JavaScript, TypeScript, Java, C#/.NET, Docker, Pytest, Vitest, xUnit/NUnit, SQLite, Bash, Git, Cursor IDE</p>
+									</div>
+								</article>
+
+								<article data-category="ai" class="visible">
+									<a class="image"><img src="images/idrix_mcp.png" alt="Servidor MCP"/></a>
+									<div class="content">
+										<h3>Servidor MCP</h3>
+										<p>Implementación de un Servidor Model Context Protocol (MCP) para Idrix Technology, enfocado en integrar capacidades de IA en sistemas de software empresarial. La solución conecta datos de negocio con asistentes inteligentes para apoyar análisis de datos, reportes automatizados, perspectivas financieras y flujos de toma de decisiones. El proyecto combina desarrollo backend, integración de APIs e inteligencia de negocio asistida por IA usando Java, TypeScript y arquitecturas del lado del servidor.</p>
+										<p><strong>SDKs multiplataforma:</strong></p>
+										<ul>
+											<li><strong>Spring Boot (Java)</strong> – Integración de backend empresarial para sistemas de negocio</li>
+											<li><strong>Node.js (TypeScript)</strong> – Integración moderna de API para entornos web y PHP</li>
+										</ul>
+										<ul class="actions">
+											<li><a href="videos/java_c.mp4" class="button">Demo Java</a></li>
+											<li><a href="videos/node_c.mp4" class="button">Demo Node.js</a></li>
+										</ul>
+									</div>
+								</article>
+
+								<article data-category="ai" class="visible">
+									<a class="image"><img src="images/idrix_randomforest.png" alt="APIs de Machine Learning en Python" /></a>
+									<div class="content">
+										<h3>APIs de Machine Learning en Python</h3>
+										<p>API de Machine Learning para Idrix Technology construida con Python y FastAPI para apoyar predicciones financieras, entrenamiento de modelos y analítica empresarial. La aplicación sigue una estructura de backend modular con principios de arquitectura limpia, inyección de dependencias y endpoints RESTful para flujos de predicción en tiempo real. Diseñada para integrarse con sistemas ERP, bases de datos SQL y módulos de reportes empresariales.</p>
+										<ul class="actions">
+											<li><a href="https://gitlab.com/coral.milton/modulo-descuentos/-/tree/main?ref_type=heads" class="button">Muestra de API de Modelo ML</a></li>
+										</ul>
+									</div>
+								</article>
+
+								<article data-category="ai" class="visible">
+									<a class="image"><img src="images/p2p.png" alt="Outlier AI Hawkins Pass to Pass" /></a>
+									<div class="content">
+										<h3>Outlier AI – Experimentos Hawkins / Pass-to-Pass</h3>
+										<p>Diseñé entornos de evaluación reproducibles para medir qué tan bien los modelos de IA resuelven problemas reales de código extraídos de pull requests de GitHub. Construí laboratorios de prueba basados en Docker, scripts de validación automatizados, parches de referencia y rúbricas estructuradas para verificar si las soluciones generadas por el modelo preservaban el comportamiento existente mientras mejoraban la calidad del código.</p>
+										<p>Tecnologías: TypeScript, PHP, JavaScript, Java, C#/.NET, Python, Docker, Bash, Git, PRs de GitHub, Unified Diff, JSON, CI/CD, Benchmarking</p>
+									</div>
+								</article>
+
+								<article data-category="ai" class="visible">
+									<a class="image"><img src="images/p2pCejemplo.png" alt="Proyecto de Revisión de Código con IA" /></a>
+									<div class="content">
+										<h3>Outlier AI – Proyecto de Revisión de Código</h3>
+										<p>Proyecto de evaluación de revisión de código con IA donde actué como ingeniero de software senior para probar las capacidades del modelo en la revisión de pull requests. Seleccioné PRs desafiantes de código abierto, redacté revisiones técnicas de referencia y diseñé rúbricas para evaluar si los modelos de IA podían detectar errores de lógica, riesgos de seguridad, problemas de rendimiento y de mantenibilidad.</p>
+										<p>Tecnologías: Python, Django, JavaScript, TypeScript, Java, C#, PostgreSQL, MySQL, MariaDB, SQL Server, Revisiones de GitHub PR, Markdown, Ingeniería de Prompts</p>
+									</div>
+								</article>
+
+								<article data-category="ai" class="visible">
+									<a class="image"><img src="images/rubytestforge.png" alt="Outlier AI Test Forge" /></a>
+									<div class="content">
+										<h3>Outlier AI – Test Forge</h3>
+										<p>Proyecto de ingeniería QA enfocado en crear suites de pruebas profesionales para agentes de código de IA. Analicé problemas y commits reales de GitHub, redacté enunciados claros de problemas, documenté interfaces públicas y desarrollé pruebas que fallaban antes del parche y pasaban con la solución correcta. El trabajo validó el comportamiento observable del software en repositorios backend, frontend y full-stack.</p>
+										<p>Tecnologías: Python, JavaScript, React, PHP, C#/.NET, Ruby, Pytest, Jest, Mocha, PHPUnit, xUnit, NUnit, RSpec, Docker, Git, Bash</p>
+									</div>
+								</article>
+
+								<article data-category="ai" class="visible">
+									<a class="image"><img src="images/gemeni.png" alt="Evaluación Analítica Gemini" /></a>
+									<div class="content">
+										<h3>Outlier AI – Evaluación Analítica de Gemini</h3>
+										<p>Proyecto de evaluación enfocado en probar las capacidades de Gemini en razonamiento estadístico, análisis financiero, generación de gráficos y tareas analíticas complejas. Construí notebooks reproducibles, scripts de validación, artefactos de solución y rúbricas detalladas para evaluar corrección numérica, lógica de negocio, calidad visual y atribución de conjuntos de datos.</p>
+										<p>Tecnologías: Python, Jupyter Notebooks, Pandas, NumPy, Matplotlib, Seaborn, scikit-learn, statsmodels, Pytest, Markdown, Bash</p>
+									</div>
+								</article>
+
+								<article data-category="ai" class="visible">
+									<a class="image"><img src="images/spideymm.png" alt="Evaluación de Análisis Avanzado de Datos con ChatGPT" /></a>
+									<div class="content">
+										<h3>Outlier AI – Evaluación de Análisis Avanzado de Datos</h3>
+										<p>Diseñé prompts complejos y rúbricas ponderadas para evaluar el rendimiento de ChatGPT en tareas de análisis avanzado de datos. Curé conjuntos de datos multi-formato, creé desafíos analíticos que involucran estadísticas, modelado predictivo, visualización y documenté fallos del modelo mediante red-teaming y soluciones Python de referencia.</p>
+										<p>Tecnologías: Python, Google Colab, Pandas, NumPy, Matplotlib, Seaborn, SciPy, Scikit-learn, CSV, TSV, XML, JSON, Ingeniería de Prompts</p>
+									</div>
+								</article>
+
+								<article data-category="ai" class="visible">
+									<a class="image"><img src="images/diffgitC.png" alt="Outlier AI SWE Full Trace Project" /></a>
+									<div class="content">
+										<h3>Outlier AI – Proyecto SWE Full Trace</h3>
+										<p>Generé trayectorias estructuradas de ingeniería de software para entrenar agentes de código de IA. Trabajé en tareas de migración de repositorios que involucran .NET Framework a .NET 6/8 y Java 8/11 a Java 17/21. Cada trayectoria documentó el razonamiento del desarrollador, exploración de código, ediciones, compilaciones y validación de pruebas usando entornos basados en Docker.</p>
+										<p>Tecnologías: C#, .NET 6/8, Java 17/21, Maven, ASP.NET Core, gRPC, Docker, Git, Cursor IDE, xUnit, NUnit, MSTest, JUnit 5, Mockito, Bash</p>
+									</div>
+								</article>
+
+								<article data-category="ai" class="visible">
+									<a class="image"><img src="images/outlier_ai_newton.png" alt="Outlier AI Coding Evaluation" /></a>
+									<div class="content">
+										<h3>Outlier AI – Proyecto de Evaluación de Código</h3>
+										<p>Proyecto de calidad de software y evaluación de IA enfocado en probar la capacidad de los LLMs para generar código confiable, simulaciones y artefactos de software interactivos. Trabajé en la revisión, depuración, validación y mejora de soluciones generadas en Python, JavaScript, Java, C#/.NET y PHP. El trabajo involucró identificar errores de ejecución, problemas de lógica, rendimiento y debilidades de calidad de código, para luego crear soluciones de referencia listas para producción.</p>
+										<p>Tecnologías: Python, JavaScript, Java, C#/.NET, PHP, Revisión de Código, Pruebas Automatizadas, QA, Ingeniería de Prompts</p>
+										<ul class="actions">
+											<li><a class="button" href="https://gitlab.com/coral.milton/diccionario-anki-jp/-/blob/main/game1.py">Muestra de Código</a></li>
+										</ul>
+									</div>
+								</article>
+
+								<article data-category="ai" class="visible">
+									<a class="image"><img src="images/outlier ai 1.png" alt="Outlier AI Ingeniería de Prompts" /></a>
+									<div class="content">
+										<h3>Outlier AI – Ingeniería de Prompts y Ejecución de Herramientas</h3>
+										<p>Proyecto de evaluación de LLMs enfocado en ingeniería de prompts de sistema, validación de ejecución de herramientas y pruebas del comportamiento de IA. Diseñé prompts estructurados, evalué respuestas del modelo, identifiqué errores de ejecución y creé criterios claros de evaluación para corrección, confiabilidad y seguimiento de instrucciones. Este trabajo fortaleció mi capacidad de combinar prácticas de ingeniería de software con flujos de desarrollo asistido por IA.</p>
+										<p>Tecnologías: Evaluación de LLMs, Ingeniería de Prompts, Herramientas MCP, Diseño de Sistemas, Aseguramiento de Calidad, Python, JavaScript</p>
+									</div>
+								</article>
+
+								<article data-category="ai" class="visible">
+									<a class="image"><img src="images/outlier ai2.png" alt="Outlier AI Tool-Calling Evaluation" /></a>
+									<div class="content">
+										<h3>Outlier AI – Proyecto de Evaluación de Llamadas a Herramientas</h3>
+										<p>Proyecto de evaluación de IA diseñado para mejorar el rendimiento del modelo en tareas de llamadas a herramientas en múltiples pasos. Desarrollé evaluaciones basadas en rúbricas para medir la calidad del razonamiento, completitud de tareas, uso de herramientas y confiabilidad de respuestas. El proyecto involucró el análisis de flujos de trabajo complejos de IA y la validación de resultados con criterios técnicos estructurados.</p>
+									</div>
+								</article>
+
+								<!-- Proyectos de Datos -->
+								<article data-category="data">
+									<a class="image"><img src="images/proyecto_datos.png" alt="Análisis de Accidentes en Quito" /></a>
+									<div class="content">
+										<h3>Análisis de Calles con Alta Tasa de Accidentes en Quito, Ecuador</h3>
+										<p>Proyecto de análisis de datos usando datos de Twitter, NLP y procesamiento geoespacial para identificar calles con alta incidencia de accidentes en Quito. El sistema procesa texto no estructurado, extrae información relevante sobre accidentes de tráfico y apoya estrategias de prevención mediante análisis de ubicación e insights visuales.</p>
+										<ul class="actions">
+											<li><a href="https://gitlab.com/coral.milton/analysis-of-streets-with-high-accident-rates-in-quito-ecuador/-/blob/main/Data_analysis.ipynb?ref_type=heads" class="button">Repositorio</a></li>
+										</ul>
+									</div>
+								</article>
+
+								<article data-category="data">
+									<a class="image"><img src="images/proyecto_u1.png" alt="Análisis de Datos de Salud" /></a>
+									<div class="content">
+										<h3>Análisis y Representación de Datos del Ministerio de Salud del Ecuador</h3>
+										<p>Proyecto de investigación y visualización que analiza más de un millón de registros de salud del Ministerio de Salud del Ecuador. Desarrollado en R Studio con un dashboard interactivo en Shiny, que incluye mapas geográficos, gráficos de distribución de enfermedades y visualizaciones estadísticas para el análisis de salud pública.</p>
+										<ul class="actions">
+											<li><a href="https://mi1w0i-lancelot.shinyapps.io/APP_CASOS_CLINICOS_SHINY/" class="button">Repositorio</a></li>
+										</ul>
+									</div>
+								</article>
+
+								<article data-category="data">
+									<a class="image"><img src="images/idrix_powerbi.png" alt="Dashboard de Seguros" /></a>
+									<div class="content">
+										<h3>Dashboard de Análisis de Datos de Seguros y Finanzas para Idrix Technology</h3>
+										<p>Solución de analítica en Power BI para el análisis de datos de seguros y finanzas. El dashboard ofrece vistas interactivas de montos asegurados, préstamos, indicadores de pobreza, segmentación de clientes e informes estratégicos de inteligencia de negocio.</p>
+									</div>
+								</article>
+
+								<article data-category="data">
+									<a class="image"><img src="images/idrix_powerbi2.png" alt="Dashboard Financiero" /></a>
+									<div class="content">
+										<h3>Dashboard de Análisis Financiero en Tiempo Real para IDRIX</h3>
+										<p>Solución Power BI con integración en vivo con MySQL para el monitoreo financiero en tiempo real. Incluye análisis de ingresos, métricas de ingresos vs. gastos, actividad de clientes, distribución de métodos de pago e indicadores de rendimiento empresarial.</p>
+									</div>
+								</article>
+
+								<!-- Proyectos de Código -->
+								<article data-category="code">
+									<a class="image"><img src="images/factura.webp" alt="iDrix Contable ERP SaaS" /></a>
+									<div class="content">
+										<h3>iDrix Contable – Backend ERP SaaS e Infraestructura en la Nube</h3>
+										<p>Trabajé en el backend, infraestructura en la nube y capa de datos de iDrix Contable, una plataforma ERP SaaS para la gestión empresarial. Desarrollé módulos backend, dashboards, APIs REST, flujos de base de datos multi-tenant, funciones de gestión de inventario, sincronización de pedidos, visualización de KPIs e informes contables.</p>
+										<p>Tecnologías: PHP, Laravel, Java, Spring Boot, Python, AWS, EC2, S3, Lambda, API Gateway, MySQL, MariaDB, Bash, Certbot, APIs REST, Git, Linux</p>
+									</div>
+								</article>
+
+								<article data-category="code">
+									<a class="image"><img src="images/KPIVentasSucursal.webp" alt="iDrix Mobile Backend" /></a>
+									<div class="content">
+										<h3>iDrix Mobile – Backend en la Nube e Integración de APIs</h3>
+										<p>Configuré y desplegué la infraestructura en la nube para la aplicación ERP iDrix Mobile, apoyando entornos de producción para usuarios de negocio. Integré clientes móviles con servicios backend mediante API Gateway, configuré rutas, validé endpoints y aseguré la comunicación segura entre el frontend móvil y los sistemas backend.</p>
+										<p>Tecnologías: AWS, EC2, S3, Lambda, API Gateway, React Native, APIs REST, CORS, SSL/TLS, Certbot, Linux, Git</p>
+									</div>
+								</article>
+
+								<article data-category="code">
+									<a class="image"><img src="images/prototipo_diccionario.png" alt="Diccionario Japonés" /></a>
+									<div class="content">
+										<h3>Prototipo de Diccionario Japonés-Inglés para el Aprendizaje de Idiomas</h3>
+										<p>Aplicación web interactiva de aprendizaje de idiomas para el estudio de vocabulario japonés. Construida con PHP Laravel para el frontend y la capa de presentación de datos, con un backend Python para el procesamiento de búsqueda de palabras a través de la API de Jisho. Incluye significados de palabras, soporte de pronunciación y funciones de aprendizaje visual para la práctica de kanji.</p>
+										<ul class="actions">
+											<li><a href="https://gitlab.com/coral.milton/japanesedict" class="button">Repositorio</a></li>
+										</ul>
+									</div>
+								</article>
+
+								<article data-category="code">
+									<a class="image"><img src="images/proyecto_grado.png" alt="Software de Facturación en la Nube" /></a>
+									<div class="content">
+										<h3>Software de Facturación en la Nube para Microempresas Ecuatorianas</h3>
+										<p>Sistema de gestión de facturación nativo en la nube diseñado para microempresas ecuatorianas. La plataforma usa servicios de AWS, APIs backend y funciones de automatización inteligente para apoyar la facturación, registros de clientes, operaciones empresariales y flujos de gestión financiera.</p>
+										<ul class="actions">
+											<li><a href="https://dspace.ups.edu.ec/handle/123456789/27270?locale=en" class="button">Publicación</a></li>
+										</ul>
+										<ul class="actions">
+											<li><a href="https://gitlab.com/coral.milton/proyecto-de-grado" class="button">Repositorio</a></li>
+										</ul>
+									</div>
+								</article>
+
+								<article data-category="code">
+									<a class="image"><img src="images/proyecto_aws_pi2.png" alt="Dashboard IoT" /></a>
+									<div class="content">
+										<h3>Dashboard IoT con Raspberry Pi 4 y AWS</h3>
+										<p>Sistema de monitoreo IoT conectado a la nube que integra Raspberry Pi 4 con APIs backend y servicios AWS. Construido con Python, Flask, Node.js, Express.js, AWS Cognito y AWS Elastic Beanstalk para admitir autenticación de usuarios, recolección de datos de sensores en tiempo real y visualización en dashboard.</p>
+										<ul class="actions">
+											<li><a href="https://gitlab.com/coral.milton/dashboard_aws_pi_4" class="button">Repositorio</a></li>
+										</ul>
+									</div>
+								</article>
+
+								<article data-category="code">
+									<a class="image"><img src="images/carrito.png" alt="Sistema de Soldadura Automatizado" /></a>
+									<div class="content">
+										<h3>Sistema de Soldadura Automatizado con Microcontrolador PIC (Programación en C)</h3>
+										<p>Prototipo de automatización industrial programado en C usando un microcontrolador PIC 16F877A. Incluye comunicación Bluetooth y serial, múltiples modos de seguridad, parámetros de operación configurables y comportamiento de soldadura controlado por el usuario para propósitos educativos y de demostración técnica.</p>
+										<ul class="actions">
+											<li><a href="https://gitlab.com/coral.milton/proyecto_de_grado_donbosco" class="button">Repositorio</a></li>
+										</ul>
+									</div>
+								</article>
+
+								<article data-category="code">
+									<a class="image"><img src="images/clasificador_palabras.png" alt="Clasificador de Lenguaje" /></a>
+									<div class="content">
+										<h3>Clasificador de Lenguaje Ofensivo con NLP y Machine Learning</h3>
+										<p>Aplicación web basada en Flask para la clasificación de lenguaje ofensivo usando técnicas de NLP y aprendizaje automático. El sistema procesa texto de entrada, extrae características lingüísticas y aplica modelos de clasificación para la moderación de contenido y análisis en tiempo real.</p>
+										<ul class="actions">
+											<li><a href="https://gitlab.com/coral.milton/proyecto-clasificador-de-idioma-ofensivo" class="button">Repositorio</a></li>
+										</ul>
+									</div>
+								</article>
+
+								<article data-category="code">
+									<a class="image"><img src="images/reportes_warehouse.png" alt="Data Warehouse" /></a>
+									<div class="content">
+										<h3>Plataforma Full-Stack de Data Warehouse e Inteligencia de Negocio</h3>
+										<p>Plataforma de inteligencia de negocio full-stack con frontend Bootstrap, API Node.js y base de datos PostgreSQL. Incluye operaciones CRUD, endpoints REST, visualizaciones interactivas con Highcharts y exportación de informes en múltiples formatos a Excel y PDF.</p>
+										<ul class="actions">
+											<li><a href="https://gitlab.com/coral.milton/postgres-api-reports" class="button">Repositorio</a></li>
+										</ul>
+									</div>
+								</article>
+
+							</div>
+						</div>
+					</section>
+
+					<!-- CONTACTO -->
+					<section id="contact" style="margin-top: 4rem;">
+						<header class="major">
+							<h2 style="color: white; text-align: center; margin-bottom: 2rem;">Contáctame</h2>
+						</header>
+						<div style="
+							background: rgba(255,255,255,0.1);
+							backdrop-filter: blur(10px);
+							border-radius: 20px;
+							padding: 3rem;
+							border: 1px solid rgba(255,255,255,0.2);
+							max-width: 800px;
+							margin: 0 auto;
+							box-sizing: border-box;
+						">
+							<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+								<div style="text-align: center; overflow: hidden;">
+									<div style="
+										width: 60px; height: 60px;
+										background: rgba(245,106,106,0.3);
+										border-radius: 50%;
+										display: flex; align-items: center; justify-content: center;
+										margin: 0 auto 1rem;
+										border: 2px solid rgba(245,106,106,0.5);
+									">
+										<span style="font-size: 24px;">📧</span>
+									</div>
+									<h3 style="color: white; font-size: 1.2rem; margin-bottom: 0.5rem;">Correo Electrónico</h3>
+									<a href="mailto:coral.milton@gmail.com" style="
+										color: rgba(255,255,255,0.8);
+										text-decoration: none;
+										transition: color 0.3s;
+										word-break: break-all;
+										overflow-wrap: break-word;
+										display: block;
+										font-size: clamp(0.85rem, 2.5vw, 1rem);
+									">coral.milton@gmail.com</a>
+								</div>
+
+								<div style="text-align: center; overflow: hidden;">
+									<div style="
+										width: 60px; height: 60px;
+										background: rgba(245,106,106,0.3);
+										border-radius: 50%;
+										display: flex; align-items: center; justify-content: center;
+										margin: 0 auto 1rem;
+										border: 2px solid rgba(245,106,106,0.5);
+									">
+										<span style="font-size: 24px;">💼</span>
+									</div>
+									<h3 style="color: white; font-size: 1.2rem; margin-bottom: 0.5rem;">LinkedIn</h3>
+									<a href="https://www.linkedin.com/in/m1lt0n/" target="_blank" style="
+										color: rgba(255,255,255,0.8);
+										text-decoration: none;
+										transition: color 0.3s;
+										word-break: break-all;
+										overflow-wrap: break-word;
+										display: block;
+										font-size: clamp(0.85rem, 2.5vw, 1rem);
+									">/in/m1lt0n</a>
+								</div>
+							</div>
+
+							<div style="text-align: center; margin-top: 2rem;">
+								<p style="
+									color: rgba(255,255,255,0.9);
+									margin-bottom: 1.5rem;
+									font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+									padding: 0 1rem;
+									word-wrap: break-word;
+								">
+									¡Conectemos y hablemos sobre cómo podemos trabajar juntos en tu próximo proyecto!
+								</p>
+							</div>
+						</div>
+					</section>
+
+				</div>
+			</div>
+		</div>
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+		<script>
+			let currentIndex = 0;
+			const track = document.getElementById('carouselTrack');
+			const cards = track.children;
+			const totalCards = cards.length;
+			const prevBtn = document.getElementById('prevBtn');
+			const nextBtn = document.getElementById('nextBtn');
+			const dotsContainer = document.getElementById('dotsContainer');
+
+			for (let i = 0; i < totalCards; i++) {
+				const dot = document.createElement('div');
+				dot.className = 'dot';
+				if (i === 0) dot.classList.add('active');
+				dot.onclick = () => goToSlide(i);
+				dotsContainer.appendChild(dot);
+			}
+
+			function updateCarousel() {
+				track.style.transform = `translateX(-${currentIndex * 100}%)`;
+				const dots = dotsContainer.children;
+				for (let i = 0; i < dots.length; i++) {
+					dots[i].classList.toggle('active', i === currentIndex);
+				}
+				prevBtn.disabled = currentIndex === 0;
+				nextBtn.disabled = currentIndex === totalCards - 1;
+			}
+
+			function moveCarousel(direction) {
+				currentIndex += direction;
+				if (currentIndex < 0) currentIndex = 0;
+				if (currentIndex >= totalCards) currentIndex = totalCards - 1;
+				updateCarousel();
+			}
+
+			function goToSlide(index) {
+				currentIndex = index;
+				updateCarousel();
+			}
+
+			updateCarousel();
+
+			document.addEventListener('keydown', (e) => {
+				if (e.key === 'ArrowLeft') moveCarousel(-1);
+				if (e.key === 'ArrowRight') moveCarousel(1);
+			});
+		</script>
+
+		<script>
+			const video = document.getElementById('myVideo');
+			video.play().catch(e => console.log('Autoplay prevented:', e));
+		</script>
+
+		<script>
+			const buttons = document.querySelectorAll('.selector-btn');
+			const articles = document.querySelectorAll('article');
+
+			buttons.forEach(button => {
+				button.addEventListener('click', () => {
+					const category = button.dataset.category;
+					buttons.forEach(btn => btn.classList.remove('active'));
+					button.classList.add('active');
+					articles.forEach(article => {
+						if (article.dataset.category === category) {
+							article.classList.add('visible');
+						} else {
+							article.classList.remove('visible');
+						}
+					});
+				});
+			});
+		</script>
+
+	</body>
+</html>
